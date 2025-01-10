@@ -8,6 +8,159 @@
 ## 🎯 Project Overview
 
 This project implements a sophisticated sentiment analysis model for IMDB movie reviews using Word2Vec embeddings and Bidirectional LSTM. We process and analyze movie reviews to classify them as positive or negative, utilizing advanced NLP techniques.
+## 📚 Dataset Description
+
+<div align="center">
+
+### 🎯 Overview
+
+<table>
+<tr>
+<td colspan="2" align="center">
+<h3>100,000 IMDB Movie Reviews</h3>
+</td>
+</tr>
+<tr>
+<td width="50%">
+<h4>Labeled Data</h4>
+<pre>
+📝 25,000 Training Reviews
+   ├── ⭐ Positive: 12,500
+   └── 👎 Negative: 12,500
+
+🧪 25,000 Test Reviews
+   └── Unlabeled for predictions
+</pre>
+</td>
+<td width="50%">
+<h4>Additional Data</h4>
+<pre>
+🔍 50,000 Extra Reviews
+   ├── Unlabeled
+   └── For additional training
+</pre>
+</td>
+</tr>
+</table>
+
+### 📊 Rating Distribution
+
+<table>
+<tr>
+<td align="center" width="50%">
+<h4>Negative Reviews</h4>
+<pre>
+Rating < 5 ⭐
+└── Sentiment = 0
+</pre>
+</td>
+<td align="center" width="50%">
+<h4>Positive Reviews</h4>
+<pre>
+Rating ≥ 7 ⭐
+└── Sentiment = 1
+</pre>
+</td>
+</tr>
+</table>
+
+### 📁 File Structure
+
+<table>
+<tr>
+<th>File Name</th>
+<th>Description</th>
+<th>Format</th>
+<th>Size</th>
+</tr>
+<tr>
+<td><code>labeledTrainData.tsv</code></td>
+<td>Training dataset with sentiments</td>
+<td>Tab-delimited</td>
+<td>25,000 rows</td>
+</tr>
+<tr>
+<td><code>testData.tsv</code></td>
+<td>Test dataset for predictions</td>
+<td>Tab-delimited</td>
+<td>25,000 rows</td>
+</tr>
+<tr>
+<td><code>unlabeledTrainData.tsv</code></td>
+<td>Additional training data</td>
+<td>Tab-delimited</td>
+<td>50,000 rows</td>
+</tr>
+<tr>
+<td><code>sampleSubmission.csv</code></td>
+<td>Submission format example</td>
+<td>Comma-delimited</td>
+<td>-</td>
+</tr>
+</table>
+
+### 📋 Data Fields
+
+<table>
+<tr>
+<th width="20%">Field</th>
+<th width="30%">Type</th>
+<th width="50%">Description</th>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>Unique Identifier</td>
+<td>Distinct ID for each review</td>
+</tr>
+<tr>
+<td><code>sentiment</code></td>
+<td>Binary (0/1)</td>
+<td>0: Negative Review<br>1: Positive Review</td>
+</tr>
+<tr>
+<td><code>review</code></td>
+<td>Text</td>
+<td>Full review content</td>
+</tr>
+</table>
+
+### 🎯 Key Characteristics
+
+<table>
+<tr>
+<td width="50%" align="center">
+<h4>📊 Distribution</h4>
+<pre>
+Balanced Dataset
+├── 50% Positive Reviews
+└── 50% Negative Reviews
+</pre>
+</td>
+<td width="50%" align="center">
+<h4>🎥 Movie Coverage</h4>
+<pre>
+Review Limits
+├── Max 30 reviews per movie
+└── Different movies in train/test
+</pre>
+</td>
+</tr>
+</table>
+
+### 📝 Sample Review Structure
+
+```plaintext
+╔══════════════════════════════════════════════╗
+║ ID: 12345                                    ║
+║ ══════════════════════                       ║
+║ Sentiment: 1 (Positive)                      ║
+║ Review: "This movie was absolutely fantastic! ║
+║         The acting was superb and the plot   ║
+║         kept me engaged throughout..."       ║
+╚══════════════════════════════════════════════╝
+```
+
+</div>
 
 ## 📊 Data Visualization & Analysis
 
