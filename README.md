@@ -13,14 +13,14 @@ This project implements a sophisticated sentiment analysis model for IMDB movie 
 
 ### 1. Sentiment Distribution
 <div align="center">
-< img src="images/sentiment_distribution.png" alt="Sentiment Distribution" width="800"/>
+<img src="images/sentiment_distribution.png" alt="Sentiment Distribution" width="800"/>
 <br>
 <em>Class distribution showing balanced positive and negative reviews</em>
 </div>
 
 ### 2. Review Length Analysis
 <div align="center">
-< img src="images/review_length_distribution.png" alt="Review Length Distribution" width="800"/>
+<img src="images/review_length_distribution.png" alt="Review Length Distribution" width="800"/>
 <br>
 <em>Distribution of review lengths with statistical markers:
 - Mode: 164 words
@@ -32,8 +32,8 @@ This project implements a sophisticated sentiment analysis model for IMDB movie 
 <div align="center">
 <table>
 <tr>
-<td>< img src="images/confusion_matrix.png" alt="Confusion Matrix" width="400"/></td>
-<td>< img src="images/learning_curves.png" alt="Learning Curves" width="400"/></td>
+<td><img src="images/confusion_matrix.png" alt="Confusion Matrix" width="400"/></td>
+<td><img src="images/learning_curves.png" alt="Learning Curves" width="400"/></td>
 </tr>
 <tr>
 <td align="center"><em>Confusion Matrix showing prediction accuracy</em></td>
