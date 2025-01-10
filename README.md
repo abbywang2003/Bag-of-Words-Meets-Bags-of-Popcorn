@@ -323,19 +323,197 @@ matplotlib==3.4.2
 seaborn==0.11.1
 ```
 
-## 📝 Results and Analysis
+## 🧠 Model Architecture & Results
 
-### Word2Vec Insights
-```python
-# Example similar words
-model.wv.most_similar('excellent')
-# Output: [('amazing', 0.87), ('outstanding', 0.82), ...]
+<div align="center">
+
+### 🏗️ Network Architecture
+
+```mermaid
+graph TD
+    A[Input Layer] --> B[Embedding Layer]
+    B --> C[Bidirectional LSTM]
+    C --> D[Dropout 0.25]
+    D --> E[Dense Layer 64]
+    E --> F[Dropout 0.30]
+    F --> G[Output Layer]
+    
+    style A fill:#f9f,stroke:#333,stroke-width:4px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#dfd,stroke:#333,stroke-width:2px
+    style D fill:#fdd,stroke:#333,stroke-width:2px
+    style E fill:#dfd,stroke:#333,stroke-width:2px
+    style F fill:#fdd,stroke:#333,stroke-width:2px
+    style G fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-### Performance Analysis
-- High accuracy on balanced dataset
-- Effective capture of long-range dependencies
-- Robust against review length variation
+### 📊 Layer Details
+
+<table>
+<tr>
+<th>Layer</th>
+<th>Output Shape</th>
+<th>Parameters</th>
+<th>Visual Representation</th>
+</tr>
+<tr>
+<td>Embedding</td>
+<td>(None, 150, 256)</td>
+<td>33,513,472</td>
+<td>
+<pre>
+[█████████] 98.8%
+</pre>
+</td>
+</tr>
+<tr>
+<td>Bidirectional LSTM</td>
+<td>(None, 256)</td>
+<td>394,240</td>
+<td>
+<pre>
+[█░░░░░░░░] 1.16%
+</pre>
+</td>
+</tr>
+<tr>
+<td>Dropout 1</td>
+<td>(None, 256)</td>
+<td>0</td>
+<td>
+<pre>
+[░░░░░░░░░] 0%
+</pre>
+</td>
+</tr>
+<tr>
+<td>Dense</td>
+<td>(None, 64)</td>
+<td>16,448</td>
+<td>
+<pre>
+[░░░░░░░░░] 0.04%
+</pre>
+</td>
+</tr>
+<tr>
+<td>Dropout 2</td>
+<td>(None, 64)</td>
+<td>0</td>
+<td>
+<pre>
+[░░░░░░░░░] 0%
+</pre>
+</td>
+</tr>
+<tr>
+<td>Dense Output</td>
+<td>(None, 1)</td>
+<td>65</td>
+<td>
+<pre>
+[░░░░░░░░░] ~0%
+</pre>
+</td>
+</tr>
+</table>
+
+### 🔢 Parameter Distribution
+
+<table>
+<tr>
+<td width="50%" align="center">
+<pre>
+📊 Total Parameters
+┌──────────────────┐
+│   33,924,225    │
+└──────────────────┘
+</pre>
+</td>
+<td width="50%" align="center">
+<pre>
+🔄 Parameter Types
+┌─────────────────┐
+│ Trainable:   1.2%│
+│ Frozen:     98.8%│
+└─────────────────┘
+</pre>
+</td>
+</tr>
+</table>
+
+### ⚡ Performance Metrics
+
+<table>
+<tr>
+<td width="33%" align="center">
+<h4>⏱️ Processing Time</h4>
+<pre>
+CPU Time: 11m 7s
+Wall Time: 6m 6s
+</pre>
+</td>
+<td width="33%" align="center">
+<h4>💻 System Usage</h4>
+<pre>
+User CPU: 8m 42s
+Sys CPU:  2m 24s
+</pre>
+</td>
+<td width="33%" align="center">
+<h4>🎯 Efficiency</h4>
+<pre>
+Parallelization: 182%
+Memory Usage: High
+</pre>
+</td>
+</tr>
+</table>
+
+### 🛠️ Model Configuration
+
+<table>
+<tr>
+<td width="50%" align="center">
+<h4>📝 Architecture Details</h4>
+<pre>
+Embedding Dim: 256
+Sequence Length: 150
+LSTM Units: 128
+Dense Units: 64
+</pre>
+</td>
+<td width="50%" align="center">
+<h4>🎛️ Training Settings</h4>
+<pre>
+Dropout 1: 25%
+Dropout 2: 30%
+Optimizer: Adam
+Loss: Binary Cross-Entropy
+</pre>
+</td>
+</tr>
+</table>
+
+## 🔍 Key Insights
+
+1. **Architecture Efficiency**
+   - Large embedding layer (98.8% of parameters)
+   - Minimal trainable parameters (1.2%)
+   - Effective dropout regularization
+
+2. **Resource Usage**
+   - Good CPU utilization
+   - Efficient parallel processing
+   - Reasonable training time
+
+3. **Model Complexity**
+   - Deep but narrow architecture
+   - Strategic dropout placement
+   - Balanced parameter distribution
+
+
+</div>
 
 ## 🤝 Contributing
 
